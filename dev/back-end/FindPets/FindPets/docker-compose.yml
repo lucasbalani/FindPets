@@ -1,0 +1,22 @@
+version: "3"
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  mysql-data:
+
+services:
+  db-mysql:
+    container_name: db-mysql
+    image: mysql:8.0.35-debian
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+      - "3306:3306"
+    networks:
+      - db
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: always
