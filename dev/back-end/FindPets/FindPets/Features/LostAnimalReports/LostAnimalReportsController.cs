@@ -2,7 +2,7 @@
 using CoreAPI.Features.LostAnimalReports.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CoreAPI.Features;
+namespace CoreAPI.Features.LostAnimalReports;
 
 [ApiController]
 [Route("[controller]")]
