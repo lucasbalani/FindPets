@@ -1,6 +1,5 @@
 ﻿namespace CoreAPI.Shared.Enums;
 
-
 public enum AnimalSize
 {
     Small = 1,
