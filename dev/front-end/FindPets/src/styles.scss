@@ -1,1 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+$custom-primary-color: (
+  50: #4572ac,
+  100: #4572ac,
+  200: #4572ac,
+  300: #4572ac,
+  400: #00477D,
+  500: #00477D,
+  600: #00477D,
+  700: #00477D,
+  800: #00214f,
+  900: #00214f,
+  A100: #4572ac,
+  A200: #4572ac,
+  A400: #00477c,
+  A700: #00477c,
+  contrast: (50: #fff,
+    100: #fff,
+    200: #fff,
+    300: #fff,
+    400: #fff,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+    A100: #fff,
+    A200: #fff,
+    A400: #fff,
+    A700: #fff,
+  ),
+);
+
+$custom-accent-color: (
+  50: mix(white, #A05CBF, .5),
+  100: mix(white, #A05CBF, .5),
+  200: mix(white, #A05CBF, .5),
+  300: mix(white, #A05CBF, .5),
+  400: #A05CBF,
+  500: #A05CBF,
+  600: #A05CBF,
+  700: #A05CBF,
+  800: mix(black, #A05CBF, .5),
+  900: mix(black, #A05CBF, .5),
+  A100: mix(white, #A05CBF, .5),
+  A200: mix(white, #A05CBF, .5),
+  A400: #A05CBF,
+  A700: #A05CBF,
+  contrast: (50: #fff,
+    100: #fff,
+    200: #fff,
+    300: #fff,
+    400: #fff,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+    A100: #fff,
+    A200: #fff,
+    A400: #fff,
+    A700: #fff,
+  ),
+);
+
+$app-primary: mat.define-palette($custom-primary-color, 500);
+$app-accent: mat.define-palette($custom-accent-color, 500, 900, A100);
+$app-warn: mat.define-palette(mat.$red-palette);
+
+$app-light-theme: mat.define-light-theme((color: (primary: $app-primary,
+        accent: $app-accent,
+        warn: $app-warn,
+      ),
+      typography: mat.define-typography-config()
+    ));
+
+@include mat.all-component-themes($app-light-theme);
