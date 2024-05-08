@@ -3,14 +3,15 @@ using CoreAPI.Features.AbandonedAnimalReports.Models;
 
 namespace CoreAPI.Features.AbandonedAnimalReports.Services;
 
-public class AbandonedAnimalReportService : IAbandonedAnimalReportService
+public class AbandonedAnimalReportService(IAbandonedAnimalReportRepo repo) : IAbandonedAnimalReportService
 {
-    private readonly IAbandonedAnimalReportRepo _repo;
+    public async Task<IList<AbandonedAnimalReport>> ListAbandonedAnimalAsync()
+    => await repo.ListAbandonedAnimalAsync();
 
-    public AbandonedAnimalReportService(IAbandonedAnimalReportRepo repo)
+    public async Task<AbandonedAnimalReport> AddAbandonedAnimal(AbandonedAnimalReport request)
     {
-        _repo = repo;
+        var entity = await repo.AddAbandonedAnimalAsync(request);
+        repo.Commit();
+        return entity;
     }
-
-  
 }

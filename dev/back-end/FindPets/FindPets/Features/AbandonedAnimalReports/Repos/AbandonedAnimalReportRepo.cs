@@ -10,6 +10,16 @@ public class AbandonedAnimalReportRepo(DataContext context) : IAbandonedAnimalRe
 {
     private readonly DbSet<AbandonedAnimalReport> DataSet = context.AbandonedAnimalReports;
 
-    public async Task<IList<AbandonedAnimalReport>> ListAbandonedAnimalReport()
-        => await DataSet.ToListAsync();
+    public async Task<IList<AbandonedAnimalReport>> ListAbandonedAnimalAsync()
+           => await DataSet.ToListAsync();
+
+    public async Task<AbandonedAnimalReport> AddAbandonedAnimalAsync(AbandonedAnimalReport abandonedAnimalReport)
+    {
+        await DataSet.AddAsync(abandonedAnimalReport);
+        return abandonedAnimalReport;
+    }
+
+    public async Task Commit()
+    => await context.SaveChangesAsync();
 }
+
