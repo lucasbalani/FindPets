@@ -1,6 +1,7 @@
 using CoreApi.Infra.Context;
 using CoreAPI.Features.AbandonedAnimalReports.IoC;
 using CoreAPI.Features.LostAnimalReports.IoC;
+using CoreAPI.Features.ReportPurchases.IoC;
 using Microsoft.EntityFrameworkCore;
 
 namespace CoreApi.Infra.IoC;
@@ -29,7 +30,8 @@ public static class DependencyInjection
         //services.AddAutoMapper(typeof(Program).Assembly);
 
         services.AddAbandonedAnimalReportInfrastructure()
-                .AddLostAnimalReportInfrastructure();
+                .AddLostAnimalReportInfrastructure()
+                .AddAReportPurchaseInfrastructure();
 
         return services;
     }
