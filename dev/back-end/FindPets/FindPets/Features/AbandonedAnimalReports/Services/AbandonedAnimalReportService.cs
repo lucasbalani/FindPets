@@ -11,7 +11,7 @@ public class AbandonedAnimalReportService(IAbandonedAnimalReportRepo repo) : IAb
     public async Task<AbandonedAnimalReport> AddAbandonedAnimal(AbandonedAnimalReport request)
     {
         var entity = await repo.AddAbandonedAnimalAsync(request);
-        repo.Commit();
+        await repo.Commit();
         return entity;
     }
 }
