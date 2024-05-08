@@ -1,3 +1,4 @@
+using CoreAPI.Features.AbandonedAnimalReports.Models;
 using CoreAPI.Features.LostAnimalReports.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,6 @@ public class DataContext(DbContextOptions options) : DbContext(options)
     }
 
     #region DbSets
-
+    public DbSet<AbandonedAnimalReport> AbandonedAnimalReports { get; set; }
     #endregion
 }
