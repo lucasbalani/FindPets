@@ -1,5 +1,5 @@
 using CoreApi.Infra.Context;
-
+using CoreAPI.Features.LostAnimalReports.IoC;
 using Microsoft.EntityFrameworkCore;
 
 namespace CoreApi.Infra.IoC;
@@ -32,6 +32,7 @@ public static class DependencyInjection
         //        .AddOrderInfra()
         //        .AddOrderItemInfra()
         //        .AddKardexInfra();
+        services.AddLostAnimalReportInfrastructure();
 
         return services;
     }
