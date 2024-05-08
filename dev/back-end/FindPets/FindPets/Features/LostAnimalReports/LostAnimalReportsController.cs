@@ -12,4 +12,8 @@ public class LostAnimalReportsController(ILostAnimalReportService service) : Con
     [HttpGet]
     public async Task<IList<LostAnimalReport>> ListAsync()
         => await service.ListLostAnimalAsync();
+
+    [HttpPost]
+    public async Task<LostAnimalReport> CreateAsync([FromBody] LostAnimalReport lostAnimalReport) 
+        => await service.AddLostAnimalAsync(lostAnimalReport);
 }
