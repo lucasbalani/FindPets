@@ -1,8 +1,9 @@
-using CoreApi.Infra.Context;
+﻿using Microsoft.EntityFrameworkCore;
 
-using Microsoft.EntityFrameworkCore;
+using PetsApi.Features.AnimalTypes.IoC;
+using PetsApi.Infra.Context;
 
-namespace CoreApi.Infra.IoC;
+namespace PetsApi.Infra.IoC;
 
 public static class DependencyInjection
 {
@@ -22,16 +23,7 @@ public static class DependencyInjection
 
         #endregion
 
-        //services.AddExceptionHandler<GlobalExceptionHandler>();
-        //services.AddProblemDetails();
-
-        //services.AddAutoMapper(typeof(Program).Assembly);
-
-        //services.AddUserInfra()
-        //        .AddProductInfra()
-        //        .AddOrderInfra()
-        //        .AddOrderItemInfra()
-        //        .AddKardexInfra();
+        services.AddAnimalTypeInfrastructure();
 
         return services;
     }

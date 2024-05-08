@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace CoreApi.Infra.Context;
+using PetsApi.Features.AnimalTypes.Models;
+
+namespace PetsApi.Infra.Context;
 
 public class DataContext(DbContextOptions options) : DbContext(options)
 {
@@ -11,6 +13,6 @@ public class DataContext(DbContextOptions options) : DbContext(options)
     }
 
     #region DbSets
-
+    public DbSet<AnimalType> AnimalTypes { get; set; }
     #endregion
 }
