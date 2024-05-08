@@ -1,4 +1,6 @@
 ﻿using CoreAPI.Features.AbandonedAnimalReports.Contracts;
+using CoreAPI.Features.AbandonedAnimalReports.Models;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreAPI.Features.AbandonedAnimalReports
@@ -8,9 +10,6 @@ namespace CoreAPI.Features.AbandonedAnimalReports
     [Produces("application/json")]
     public class AbandonedAnimalReportController(IAbandonedAnimalReportService service) : ControllerBase
     {
-        private IAbandonedAnimalReportService _service = service;
-
-      
 
     }
 }

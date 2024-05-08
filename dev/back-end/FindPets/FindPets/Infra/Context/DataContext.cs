@@ -6,8 +6,6 @@ namespace CoreApi.Infra.Context;
 
 public class DataContext(DbContextOptions options) : DbContext(options)
 {
-    public DbSet<LostAnimalReport> LostAnimalReports { get; internal set; }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(DataContext).Assembly);
@@ -16,5 +14,6 @@ public class DataContext(DbContextOptions options) : DbContext(options)
 
     #region DbSets
     public DbSet<AbandonedAnimalReport> AbandonedAnimalReports { get; set; }
+    public DbSet<LostAnimalReport> LostAnimalReports { get; set; }
     #endregion
 }

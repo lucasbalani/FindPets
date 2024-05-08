@@ -9,6 +9,6 @@ public class LostAnimalReportRepo(DataContext context) : ILostAnimalReportRepo
 {
     private readonly DbSet<LostAnimalReport> DataSet = context.LostAnimalReports;
 
-    public async Task<IList<LostAnimalReport>> ListLostAnimalReportAsync() 
+    public async Task<IList<LostAnimalReport>> ListLostAnimalAsync() 
         => await DataSet.ToListAsync();
 }
