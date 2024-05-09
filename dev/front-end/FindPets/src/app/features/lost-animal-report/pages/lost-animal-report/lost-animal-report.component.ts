@@ -9,7 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LostAnimalReportComponent implements OnInit {
   form!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
     this.createForm();
