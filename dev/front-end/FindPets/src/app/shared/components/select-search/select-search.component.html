@@ -1,0 +1,38 @@
+<mat-form-field class="w-100" [class.flat-mat-form-field]="flat" appearance="outline">
+  <mat-label>{{label}}</mat-label>
+  <mat-select #select [formControl]="formControl" (selectionChange)="onSelectionChange($event.value)"
+    [placeholder]="defaultOptionText" (openedChange)="selectTriggered($event)" [disableOptionCentering]="true"
+    [required]="required" [multiple]="multiple" >
+
+    <mat-option [value]="null" class="unselectable-option text-dark p-0 w-100" disabled *ngIf="list?.length"
+      style="position: relative;">
+
+      <button mat-button type="button" color="primary" [disableRipple]="true" (click)="okButtonClicked()"
+        style="position: absolute; top: 0; right: 0;">
+        {{okButtonText}}
+      </button>
+    </mat-option>
+    <mat-option [value]="null" class="unselectable-option" *ngIf="showDefaultOption"
+      [disabled]="disableDefaultOption">
+      {{defaultOptionText}}
+    </mat-option>
+    <mat-option [value]="0" class="unselectable-option" *ngIf="showNone">
+      {{'Nenhum'}}
+    </mat-option>
+    <mat-option [value]="item.value" *ngFor="let item of list | search:searchText:multiple:control!.value;">
+      <ng-container *ngIf="optionTemplate" [ngTemplateOutlet]="optionTemplate" [ngTemplateOutletContext]="{ item }">
+      </ng-container>
+      <div *ngIf="!optionTemplate">
+        {{item.text}}
+      </div>
+    </mat-option>
+  </mat-select>
+  <a matTextSuffix *ngIf="multiple && formControl.value?.length" matTooltip="Limpar"
+    class="clear-button text-primary cursor-pointer" (click)="clear($event)">
+    &nbsp;<i class="far fa-delete-left fa-lg"></i>
+  </a>
+
+  <mat-error>
+    <span *ngIf="control?.hasError('required')">Campo Obrigatório</span>
+  </mat-error>
+</mat-form-field>

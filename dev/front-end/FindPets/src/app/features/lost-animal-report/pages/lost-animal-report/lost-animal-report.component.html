@@ -3,20 +3,22 @@
         <h1><strong>Reportar pet perdido</strong></h1>
 
         <!-- Tipo animal -->
-        <mat-card class="p-4">
+        <mat-card class="p-4 border">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <h3><strong>Tipo do pet</strong></h3>
                     <span>Selecione qual o tipo do pet que você perdeu, por exemplo: gato, cachorro...</span>
                 </div>
                 <div class="col-12 col-md-6">
-                    D
+                    <up-select-search class="col-12" label="Pet" [multiple]="false" [list]="animalTypeOptions"
+                        [control]="form.controls['animalTypeId']" [required]="true">
+                    </up-select-search>
                 </div>
             </div>
         </mat-card>
 
         <!-- Detalhes do animal -->
-        <mat-card class="p-4 mt-4">
+        <mat-card class="p-4 mt-4 border">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <h3><strong>Detalhes</strong></h3>
@@ -36,13 +38,17 @@
                             <input type="text" matInput formControlName="color" required />
                             <mat-error>* Campo obrigatório</mat-error>
                         </mat-form-field>
+
+                        <up-select-search class="col-12" label="Tamanho" [multiple]="false" [list]="sizeOptions"
+                            [control]="form.controls['size']" [required]="true">
+                        </up-select-search>
                     </div>
                 </div>
             </div>
         </mat-card>
 
         <!-- Dados do desaparecimento -->
-        <mat-card class="p-4 mt-4">
+        <mat-card class="p-4 mt-4 border">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <h3><strong>Dados do desaparecimento</strong></h3>
@@ -50,6 +56,13 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="row">
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Data desaparecimento</mat-label>
+                            <input matInput [matDatepicker]="pickerDataDesaparecimento" formControlName="lostDate">
+                            <mat-datepicker-toggle matSuffix [for]="pickerDataDesaparecimento"></mat-datepicker-toggle>
+                            <mat-datepicker #pickerDataDesaparecimento></mat-datepicker>
+                        </mat-form-field>
+
                         <mat-form-field class="col-12" appearance="outline">
                             <mat-label>Local visto pela última vez</mat-label>
                             <input type="text" matInput formControlName="lastLocation" required />
@@ -61,7 +74,7 @@
         </mat-card>
 
         <!-- Contato -->
-        <mat-card class="p-4 mt-4">
+        <mat-card class="p-4 mt-4 border">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <h3><strong>Contato</strong></h3>
@@ -75,18 +88,21 @@
                             <input type="text" matInput formControlName="email" required />
                             <mat-error>* Campo obrigatório</mat-error>
                         </mat-form-field>
+
                         <mat-form-field class="col-12" appearance="outline">
                             <mat-label>Celular/telefone</mat-label>
                             <input type="text" matInput formControlName="numberContact" required />
                             <mat-error>* Campo obrigatório</mat-error>
                         </mat-form-field>
+
+                        <mat-checkbox class="col-12" formControlName="acceptShareNumber">Eu aceito compartilhar o meu celular/telefone com terceiros</mat-checkbox>
                     </div>
                 </div>
             </div>
         </mat-card>
 
         <!-- Foto -->
-        <mat-card class="p-4 mt-4">
+        <mat-card class="p-4 mt-4 border">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <h3><strong>Foto</strong></h3>
@@ -99,14 +115,16 @@
                             <input type="text" matInput formControlName="image" />
                             <mat-error>* Campo obrigatório</mat-error>
                         </mat-form-field>
+
+                        <mat-checkbox class="col-12" formControlName="acceptShareImagePet">Eu aceito compartilhar a foto do meu pet com terceiros</mat-checkbox>
                     </div>
                 </div>
             </div>
         </mat-card>
 
         <div class="d-flex justify-content-end align-items-center mt-2">
-            <button type="submit" mat-raised-button color="primary" [disabled]="" (click)="save()">
-               Salvar
+            <button type="submit" mat-raised-button color="primary" [disabled]="" (click)="openPurchaseForm()">
+                Reportar
             </button>
         </div>
     </div>
