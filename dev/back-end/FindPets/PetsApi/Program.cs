@@ -9,6 +9,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(cfg => cfg.AddPolicy("AllowCors", p =>
+{
+    p.SetIsOriginAllowed(_ => true)
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials();
+}));
+
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();

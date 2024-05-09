@@ -12,3 +12,4 @@ namespace CoreAPI.Features.ReportPurchases.Configs
             builder.HasKey(x => x.Id);
         }
     }
+}

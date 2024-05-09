@@ -10,6 +10,11 @@ import { HomePageComponent } from './features/homepage/pages/home-page/home-page
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DenunciationComponent } from './features/denunciation/pages/denunciation/denunciation.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { LostAnimalReportComponent } from './features/lost-animal-report/pages/lost-animal-report/lost-animal-report.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -17,7 +22,8 @@ import { MatDividerModule } from '@angular/material/divider';
     AppComponent,
     DefaultLayoutComponent,
     HomePageComponent,
-    DenunciationComponent
+    DenunciationComponent,
+    LostAnimalReportComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,11 @@ import { MatDividerModule } from '@angular/material/divider';
     BrowserAnimationsModule,
     MatCardModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
