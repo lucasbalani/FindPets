@@ -1,0 +1,37 @@
+<form [formGroup]="form" class="m-3">
+    <h2><strong>Comprar reporte</strong></h2>
+    <div class="d-flex justify-content-center align-items-center text-success">
+        <h1><strong>R$ 69,90</strong></h1>
+    </div>
+
+    <mat-card class="p-4 mt-4 border">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h3><strong>Dados pessoais</strong></h3>
+                <span>Insira seus dados pessoais para continuar a compra.</span>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="row">
+                    <mat-form-field class="col-12" appearance="outline">
+                        <mat-label>Nome</mat-label>
+                        <input type="text" matInput formControlName="name" required />
+                        <mat-error>* Campo obrigatório</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-12" appearance="outline">
+                        <mat-label>CPF/RG</mat-label>
+                        <input type="text" matInput formControlName="document" required />
+                        <mat-error>* Campo obrigatório</mat-error>
+                    </mat-form-field>
+
+                </div>
+            </div>
+        </div>
+    </mat-card>
+
+    <div class="d-flex justify-content-end align-items-center mt-2">
+        <button type="submit" mat-raised-button color="primary" [disabled]="!!form.invalid" (click)="confirmPurchase()">
+            Confirmar
+        </button>
+    </div>
+</form>

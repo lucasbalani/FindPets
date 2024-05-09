@@ -20,10 +20,29 @@ import { SearchPipe } from './shared/pipes/search-pipe/search.pipe';
 import { A11yModule } from '@angular/cdk/a11y';
 import { PortalModule } from '@angular/cdk/portal';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
-import { MatOptionModule } from '@angular/material/core';
+import { MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule, MatOptionModule } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import localePt from '@angular/common/locales/pt';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PurchaseConfirmComponent } from './features/lost-animal-report/components/purchase-confirm/purchase-confirm.component';
 
+registerLocaleData(localePt, 'pt-Br');
+
+export const CUSTOM_DATE_FORMAT = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMMM YYYY',
+    dateA11yLabel: 'DD/MM/YYYY',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
 
 @NgModule({
   declarations: [
@@ -33,7 +52,8 @@ import { MatOptionModule } from '@angular/material/core';
     DenunciationComponent,
     LostAnimalReportComponent,
     SelectSearchComponent,
-    SearchPipe
+    SearchPipe,
+    PurchaseConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -59,9 +79,17 @@ import { MatOptionModule } from '@angular/material/core';
     MatDividerModule,
     PortalModule,
     ScrollingModule,
-    MatOptionModule
+    MatOptionModule,
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_FORMATS, useValue: CUSTOM_DATE_FORMAT },
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-Br' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
