@@ -52,7 +52,7 @@ export const CUSTOM_DATE_FORMAT = {
     HomePageComponent,
     DenunciationComponent,
     LostAnimalReportComponent,
-    AbandonedAnimalReportComponent
+    AbandonedAnimalReportComponent,
     SelectSearchComponent,
     SearchPipe,
     PurchaseConfirmComponent

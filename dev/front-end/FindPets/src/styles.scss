@@ -73,6 +73,8 @@ $custom-accent-color: (
   ),
 );
 
+@include mat.form-field-density(-3);
+
 $app-primary: mat.define-palette($custom-primary-color, 500);
 $app-accent: mat.define-palette($custom-accent-color, 500, 900, A100);
 $app-warn: mat.define-palette(mat.$red-palette);

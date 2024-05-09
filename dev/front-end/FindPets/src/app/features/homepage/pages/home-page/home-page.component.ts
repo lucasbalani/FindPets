@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
     this._router.navigate(["default", "lostAnimalReport"])
   }
 
-
-
-
+  navigateToAbandonedAnimalReports(): void {
+    this._router.navigate(["default", "abandonedAnimalReport"])
+  }
 }
