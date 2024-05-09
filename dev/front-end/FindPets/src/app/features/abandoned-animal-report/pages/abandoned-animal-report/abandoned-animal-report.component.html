@@ -1,0 +1,94 @@
+<form [formGroup]="form">
+    <div class="m-3">
+        <h1><strong>Reportar pet abandonado</strong></h1>
+
+        <!-- Tipo animal -->
+        <mat-card class="p-4">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h3><strong>Tipo do pet</strong></h3>
+                    <span>Selecione qual o tipo do pet que você encontrou, por exemplo: gato, cachorro...</span>
+                </div>
+                <div class="col-12 col-md-6">
+                    D
+                </div>
+            </div>
+        </mat-card>
+
+        <!-- Detalhes do animal -->
+        <mat-card class="p-4 mt-4">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h3><strong>Detalhes</strong></h3>
+                    <span>Insira detalhes específicos do pet que você encontrou, para que possamos detalha-lo
+                        melhor...</span>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <mat-form-field class="col-12" appearance="outline">
+                            <mat-label>Raça</mat-label>
+                            <input type="text" matInput formControlName="breed" required />
+                            <mat-error>* Campo obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-12" appearance="outline">
+                            <mat-label>Cor</mat-label>
+                            <input type="text" matInput formControlName="color" required />
+                            <mat-error>* Campo obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+
+        <!-- Dados Endereco -->
+        <mat-card class="p-4 mt-4">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h3><strong>Endereço</strong></h3>
+                    <span>Nos conte onde você localizou o animalzinho.</span>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <mat-form-field class="col-12" appearance="outline">
+                            <mat-label>Ponto de Referencia</mat-label>
+                            <input type="text" matInput formControlName="referencePoint" required />
+                            <mat-error>* Campo obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="col-12" appearance="outline">
+                            <mat-label>Endereço</mat-label>
+                            <input type="text" matInput formControlName="address" required />
+                            <mat-error>* Campo obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+
+        <!-- Foto -->
+        <mat-card class="p-4 mt-4">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h3><strong>Foto</strong></h3>
+                    <span>Adicione uma foto do pet para que possamos identifica-lo melhor..</span>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="row">
+                        <mat-form-field class="col-12" appearance="outline">
+                            <mat-label>Foto</mat-label>
+                            <input type="text" matInput formControlName="image" />
+                            <mat-error>* Campo obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+
+        <div class="d-flex justify-content-end align-items-center mt-2">
+            <button type="submit" mat-raised-button color="primary" [disabled]="" (click)="save()">
+               Salvar
+            </button>
+        </div>
+    </div>
+</form>

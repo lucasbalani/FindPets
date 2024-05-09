@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { AbandonedAnimalReportComponent } from './features/abandoned-animal-report/pages/abandoned-animal-report/abandoned-animal-report.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatButtonModule } from '@angular/material/button';
     DefaultLayoutComponent,
     HomePageComponent,
     DenunciationComponent,
-    LostAnimalReportComponent
+    LostAnimalReportComponent,
+    AbandonedAnimalReportComponent
   ],
   imports: [
     BrowserModule,
