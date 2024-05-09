@@ -87,3 +87,19 @@ $app-light-theme: mat.define-light-theme((color: (primary: $app-primary,
     ));
 
 @include mat.all-component-themes($app-light-theme);
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ddd;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #80a1aa;
+  border-radius: 8px;
+}

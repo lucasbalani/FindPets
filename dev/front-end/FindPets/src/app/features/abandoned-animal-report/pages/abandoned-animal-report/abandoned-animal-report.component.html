@@ -94,7 +94,7 @@
         </mat-card>
 
         <div class="d-flex justify-content-end align-items-center mt-2">
-            <button type="submit" mat-raised-button color="primary" [disabled]="" (click)="save()">
+            <button type="submit" mat-raised-button color="primary" [disabled]="!!form.invalid" (click)="save()">
                Salvar
             </button>
         </div>
