@@ -9,24 +9,19 @@ public class AbandonedAnimalReport
     public string Breed { get; private set; }
     public string Color { get; private set; }
     public AnimalSize Size { get; private set; }
-    public DateTime LostDate { get; private set; }
-    public string LostLocation { get; private set; }
     public string ReferencePoint { get; private set; }
     public string Address { get; private set; }
     public string? Image { get; private set; }
     public bool AcceptShareImagePet { get; private set; }
 
     public AbandonedAnimalReport(long animalTypeId, string breed, string color,
-                                 AnimalSize size, DateTime lostDate, string lostLocation,
-                                 string referencePoint, string address, string? image,
+                                 AnimalSize size, string referencePoint, string address, string? image,
                                  bool acceptShareImagePet)
     {
         AnimalTypeId = animalTypeId;
         Breed = breed;
         Color = color;
         Size = size;
-        LostDate = lostDate;
-        LostLocation = lostLocation;
         ReferencePoint = referencePoint;
         Address = address;
         Image = image;

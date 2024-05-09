@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { AbandonedAnimalReportComponent } from './features/abandoned-animal-report/pages/abandoned-animal-report/abandoned-animal-report.component';
 import { SelectSearchComponent } from './shared/components/select-search/select-search.component';
 import { SearchPipe } from './shared/pipes/search-pipe/search.pipe';
 import { A11yModule } from '@angular/cdk/a11y';
@@ -51,6 +52,7 @@ export const CUSTOM_DATE_FORMAT = {
     HomePageComponent,
     DenunciationComponent,
     LostAnimalReportComponent,
+    AbandonedAnimalReportComponent
     SelectSearchComponent,
     SearchPipe,
     PurchaseConfirmComponent
